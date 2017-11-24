@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ApuestasActivity" />
+        <activity android:name=".AmigosActivity" />
+        <activity android:name=".ConfiguracionesActivity" />
+        <activity android:name=".PerfilActivity" />
+        <activity android:name=".PartidosActivity"></activity>
     </application>
 
 </manifest>
