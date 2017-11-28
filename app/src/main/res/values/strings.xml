@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">PollaUPB</string>
+
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="login_login">Log In</string>
+    <string name="login_register">Register</string>
+
+    <string name="register_email">Email</string>
+    <string name="register_password">Password</string>
+    <string name="register_repeat_password">Repeat password</string>
+    <string name="register_register">Register</string>
+
 </resources>
