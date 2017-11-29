@@ -10,5 +10,7 @@
     <string name="register_password">Password</string>
     <string name="register_repeat_password">Repeat password</string>
     <string name="register_register">Register</string>
+    <string name="logout">Log out</string>
+    <string name="profile">Profile</string>
 
 </resources>
