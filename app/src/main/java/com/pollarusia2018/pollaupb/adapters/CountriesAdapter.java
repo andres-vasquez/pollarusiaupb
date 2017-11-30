@@ -30,7 +30,6 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
         Country p = datos.get(position);
         holder.nameTextView.setText(p.getName());
-
     }
 
     @Override
