@@ -4,7 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -15,8 +16,13 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.pollarusia2018.pollaupb.adapters.CountriesAdapter;
+import com.pollarusia2018.pollaupb.models.Country;
 
 public class MainActivity extends AppCompatActivity {
+
+    private RecyclerView countriesRecyclerView;
+    private CountriesAdapter countriesAdapter;
 
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore db;
@@ -25,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        countriesRecyclerView = (RecyclerView) findViewById(R.id.countriesRecyclerView);
+        countriesRecyclerView.setHasFixedSize(true);
+        countriesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        countriesAdapter = new CountriesAdapter(this);
+        countriesRecyclerView.setAdapter(countriesAdapter);
 
         firebaseAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -43,12 +56,16 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
 
+                            countriesAdapter.clear();
+
                             for (DocumentSnapshot document : task.getResult()) {
 
                                 String name = document.getString("name");
                                 String flagURL = document.getString("flagURL");
 
-                                Log.d("MYAPP", ">" + name + " " + flagURL);
+                                Country c = new Country(name, flagURL);
+
+                                countriesAdapter.addCountry(c);
 
                             }
 

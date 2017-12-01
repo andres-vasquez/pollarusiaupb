@@ -1,5 +1,6 @@
 package com.pollarusia2018.pollaupb.adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.pollarusia2018.pollaupb.R;
 import com.pollarusia2018.pollaupb.models.Country;
 
@@ -15,9 +17,11 @@ import java.util.ArrayList;
 public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.ViewHolder> {
 
     private ArrayList<Country> datos;
+    private Context context;
 
-    public CountriesAdapter() {
+    public CountriesAdapter(Context context) {
         datos = new ArrayList<Country>();
+        this.context = context;
     }
 
     @Override
@@ -30,6 +34,7 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
         Country p = datos.get(position);
         holder.nameTextView.setText(p.getName());
+        Glide.with(context).load(p.getFlagURL()).into(holder.flagImageView);
     }
 
     @Override
@@ -39,6 +44,16 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.View
 
     public void colocarDatos(ArrayList<Country> datos) {
         this.datos = datos;
+        notifyDataSetChanged();
+    }
+
+    public void addCountry(Country c) {
+        datos.add(c);
+        notifyDataSetChanged();
+    }
+
+    public void clear() {
+        datos.clear();
         notifyDataSetChanged();
     }
 
