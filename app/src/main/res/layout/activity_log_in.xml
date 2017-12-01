@@ -75,6 +75,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/login_register" />
 
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/singInGoogleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+
+
         </LinearLayout>
     </ScrollView>
 </android.support.design.widget.CoordinatorLayout>
