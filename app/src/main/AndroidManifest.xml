@@ -21,6 +21,8 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LogInActivity" />
         <activity android:name=".ProfileActivity" />
+        <activity android:name=".PartidosActivity" />
+
     </application>
 
 </manifest>

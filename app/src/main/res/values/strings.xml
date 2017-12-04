@@ -13,8 +13,6 @@
     <string name="logout">Log out</string>
     <string name="profile">Profile</string>
 
-    <string name="profile"> Profile</string>
-    <string name="logout">Log Out</string>
     <string name="not_close_sesion">not_close_sesion</string>
     <string name="not_firebase_auth">No se pudo autenticar con firebase</string>
 
