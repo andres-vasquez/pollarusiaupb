@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.pollarusia2018.pollaupb.StatisticsActivity">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="42dp"
+        android:text="Partido X"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="8"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/teamOneImageView"
+            android:background="@color/colorAccent"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/scoreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:padding="3dp"
+            android:textSize="35sp"
+            android:gravity="center"
+            android:text="3 - 2"/>
+
+        <ImageView
+            android:id="@+id/teamTwoImageView"
+            android:background="@color/colorAccent"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/statisticsTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:text="aqui es donde se pondran \nlas estadisticas"/>
+
+</LinearLayout>
