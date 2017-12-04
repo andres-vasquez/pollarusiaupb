@@ -6,10 +6,206 @@
     tools:context="com.pollarusia2018.pollaupb.MainActivity">
 
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/countriesRecyclerView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="33"
+            android:baselineAligned="false">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                tools:ignore="NestedWeights"
+                android:layout_marginRight="4dp"
+                android:layout_marginEnd="4dp">
+
+                <ImageView
+                    android:id="@+id/apuestasImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/apuestas"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/apuestasTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignLeft="@+id/apuestasImageView"
+                    android:layout_alignTop="@+id/apuestasImageView"
+                    android:layout_alignRight="@+id/apuestasImageView"
+                    android:layout_alignBottom="@+id/apuestasImageView"
+                    android:layout_alignStart="@+id/apuestasImageView"
+                    android:layout_alignEnd="@+id/apuestasImageView"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:text="@string/apuestas"
+                    android:textSize="28sp"
+                    android:textColor="#FFFF"
+                    android:background="#90000000" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp" >
+
+                <ImageView
+                    android:id="@+id/amigosImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/contactos"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/amigosTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/amigosImageView"
+                    android:layout_alignTop="@+id/amigosImageView"
+                    android:layout_alignRight="@+id/amigosImageView"
+                    android:layout_alignBottom="@+id/amigosImageView"
+                    android:layout_alignStart="@+id/amigosImageView"
+                    android:layout_alignEnd="@+id/amigosImageView"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:text="@string/amigos"
+                    android:textSize="28sp"
+                    android:textColor="#FFFF"
+                    android:background="#90000000" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="34"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/partidosImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/partidos" />
+
+                <TextView
+                    android:id="@+id/partidosTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignLeft="@+id/partidosImageView"
+                    android:layout_alignTop="@+id/partidosImageView"
+                    android:layout_alignRight="@+id/partidosImageView"
+                    android:layout_alignBottom="@+id/partidosImageView"
+                    android:layout_alignEnd="@+id/partidosImageView"
+                    android:layout_alignStart="@+id/partidosImageView"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:text="@string/partidos"
+                    android:textSize="28sp"
+                    android:textColor="#FFF"
+                    android:background="#90000000" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="33"
+            android:baselineAligned="false" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                tools:ignore="NestedWeights"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp" >
+
+                <ImageView
+                    android:id="@+id/ajustesImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ajustes"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/ajustesTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/ajustesImageView"
+                    android:layout_alignTop="@+id/ajustesImageView"
+                    android:layout_alignRight="@+id/ajustesImageView"
+                    android:layout_alignBottom="@+id/ajustesImageView"
+                    android:layout_alignStart="@+id/ajustesImageView"
+                    android:layout_alignEnd="@+id/ajustesImageView"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:text="@string/ajustes"
+                    android:textSize="28sp"
+                    android:textColor="#FFFF"
+                    android:background="#90000000"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp" >
+
+                <ImageView
+                    android:id="@+id/perfilImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/contactos"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/perfilTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/perfilImageView"
+                    android:layout_alignTop="@+id/perfilImageView"
+                    android:layout_alignRight="@+id/perfilImageView"
+                    android:layout_alignBottom="@+id/perfilImageView"
+                    android:layout_alignStart="@+id/perfilImageView"
+                    android:layout_alignEnd="@+id/perfilImageView"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:text="@string/perfil"
+                    android:textSize="28sp"
+                    android:textColor="#FFFF"
+                    android:background="#90000000" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>

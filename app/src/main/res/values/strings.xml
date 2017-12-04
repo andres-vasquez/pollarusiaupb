@@ -12,5 +12,10 @@
     <string name="register_register">Register</string>
     <string name="logout">Log out</string>
     <string name="profile">Profile</string>
+    <string name="perfil">Perfil</string>
+    <string name="apuestas">Apuestas</string>
+    <string name="amigos">Amigos</string>
+    <string name="partidos">Partidos</string>
+    <string name="ajustes">Ajustes</string>
 
 </resources>

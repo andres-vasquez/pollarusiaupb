@@ -1,13 +1,17 @@
 package com.pollarusia2018.pollaupb;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -21,59 +25,73 @@ import com.pollarusia2018.pollaupb.models.Country;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView countriesRecyclerView;
-    private CountriesAdapter countriesAdapter;
-
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore db;
+
+    private ImageView apuestasImageView;
+    private ImageView amigosImageView;
+    private ImageView partidosImageView;
+    private ImageView ajustesImageView;
+    private ImageView perfilImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        countriesRecyclerView = (RecyclerView) findViewById(R.id.countriesRecyclerView);
-        countriesRecyclerView.setHasFixedSize(true);
-        countriesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //countriesRecyclerView = (RecyclerView) findViewById(R.id.countriesRecyclerView);
+        //countriesRecyclerView.setHasFixedSize(true);
+        //countriesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        countriesAdapter = new CountriesAdapter(this);
-        countriesRecyclerView.setAdapter(countriesAdapter);
+        //countriesAdapter = new CountriesAdapter(this);
+        //countriesRecyclerView.setAdapter(countriesAdapter);
 
         firebaseAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        apuestasImageView = (ImageView) findViewById(R.id.apuestasImageView);
+        amigosImageView = (ImageView) findViewById(R.id.amigosImageView);
+        partidosImageView = (ImageView) findViewById(R.id.partidosImageView);
+        ajustesImageView = (ImageView) findViewById(R.id.ajustesImageView);
+        perfilImageView = (ImageView) findViewById(R.id.perfilImageView);
+
+        apuestasImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("My App", "Go to Apuestas Screen");
+            }
+        });
+
+        amigosImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("My App", "Go to Amigos Screen");
+            }
+        });
+
+        partidosImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("My App", "Go to Partidos Screen");
+            }
+        });
+
+        ajustesImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("My App", "Go to Ajustes Screen");
+            }
+        });
+
+        perfilImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("My App", "Go to Perfil Screen");
+            }
+        });
+
+
         verifyUser();
-
-        loadData();
-    }
-
-    private void loadData() {
-
-        db.collection("countries")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-
-                            countriesAdapter.clear();
-
-                            for (DocumentSnapshot document : task.getResult()) {
-
-                                String name = document.getString("name");
-                                String flagURL = document.getString("flagURL");
-
-                                Country c = new Country(name, flagURL);
-
-                                countriesAdapter.addCountry(c);
-
-                            }
-
-                        } else {
-
-                        }
-                    }
-                });
 
     }
 
