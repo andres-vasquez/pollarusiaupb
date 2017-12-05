@@ -5,6 +5,9 @@ public class Country {
     private String name;
     private String flagURL;
 
+    public Country() {
+    }
+
     public Country(String name, String flagURL) {
         this.name = name;
         this.flagURL = flagURL;

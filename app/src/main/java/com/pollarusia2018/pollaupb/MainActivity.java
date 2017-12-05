@@ -14,7 +14,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.pollarusia2018.pollaupb.adapters.CountriesAdapter;
 import com.pollarusia2018.pollaupb.models.Country;
@@ -44,7 +46,24 @@ public class MainActivity extends AppCompatActivity {
 
         verifyUser();
 
-        loadData();
+//        loadData();
+
+        loadDataRealtime();
+    }
+
+    private void loadDataRealtime() {
+        db.collection("countries")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
+
+                        countriesAdapter.clear();
+                        for (DocumentSnapshot document : documentSnapshots) {
+                            Country c = document.toObject(Country.class);
+                            countriesAdapter.addCountry(c);
+                        }
+                    }
+                });
     }
 
     private void loadData() {
