@@ -1,55 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:weightSum="2">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:orientation="horizontal"
+        android:layout_gravity="center">
 
         <ImageView
             android:id="@+id/bandera1ImageView"
             android:layout_width="100dp"
             android:layout_height="75dp"
             android:layout_gravity="center"
-            />
+            android:layout_marginLeft="15dp"/>
 
         <TextView
-            android:id="@+id/equipo1TextView"
+            android:id="@+id/score1TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:text="Pais 1"
+            android:textSize="30sp"
+            android:text="5"
+            android:layout_marginHorizontal="15dp"
             android:layout_gravity="center"/>
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="VS"
+            android:layout_gravity="center"/>
 
+        <TextView
+            android:id="@+id/score2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="5"
+            android:layout_marginHorizontal="15dp"
+            android:layout_gravity="center"/>
 
         <ImageView
             android:id="@+id/bandera2ImageView"
             android:layout_width="100dp"
             android:layout_height="75dp"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:layout_marginRight="15dp"/>
 
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/equipo1TextView"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Pais1"
+            android:gravity="center"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/equipo2TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:text="Pais 2"
-            android:layout_gravity="center"/>
+            android:gravity="center"
+            android:text="Pais2"
+            android:textSize="30sp" />
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/horaTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textSize="20sp"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/stadiumTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="Stadium: Hernando Siles"
+        />
+
 
 
 </LinearLayout>

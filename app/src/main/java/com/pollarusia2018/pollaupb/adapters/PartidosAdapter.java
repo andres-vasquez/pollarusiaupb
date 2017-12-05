@@ -44,6 +44,11 @@ public class PartidosAdapter extends RecyclerView.Adapter<PartidosAdapter.ViewHo
 
         holder.equipo2TextView.setText(p.getEquipo2().getName());
         Glide.with(context).load(p.getEquipo2().getFlagURL()).into(holder.bandera2ImageView);
+
+        holder.score1TextView.setText(p.getScore1());
+        holder.score2TextView.setText(p.getScore2());
+        holder.horaTextView.setText(p.getHora());
+        holder.estadioTextView.setText(p.getEstadio());
     }
 
     @Override
@@ -72,6 +77,10 @@ public class PartidosAdapter extends RecyclerView.Adapter<PartidosAdapter.ViewHo
         ImageView bandera2ImageView;
         TextView equipo1TextView;
         TextView equipo2TextView;
+        TextView score1TextView;
+        TextView score2TextView;
+        TextView horaTextView;
+        TextView estadioTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -80,6 +89,10 @@ public class PartidosAdapter extends RecyclerView.Adapter<PartidosAdapter.ViewHo
             equipo2TextView = itemView.findViewById(R.id.equipo2TextView);
             bandera1ImageView = itemView.findViewById(R.id.bandera1ImageView);
             bandera2ImageView = itemView.findViewById(R.id.bandera2ImageView);
+            score1TextView = itemView.findViewById(R.id.score1TextView);
+            score2TextView = itemView.findViewById(R.id.score2TextView);
+            horaTextView = itemView.findViewById(R.id.horaTextView);
+            estadioTextView = itemView.findViewById(R.id.stadiumTextView);
         }
     }
 

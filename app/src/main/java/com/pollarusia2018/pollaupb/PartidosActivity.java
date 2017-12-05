@@ -61,7 +61,14 @@ public class PartidosActivity extends AppCompatActivity {
                                 String name2 = document.getString("name2");
                                 String flagURL2 = document.getString("flagURL2");
 
-                                Partido p = new Partido(new Country(name1, flagURL1), new Country(name2, flagURL2));
+                                 String score1 = document.getString("score1");
+                                 String score2 = document.getString("score2");
+
+                                 String horario = document.getString("horario");
+                                 String estadio = document.getString("estadio");
+
+
+                                Partido p = new Partido(new Country(name1, flagURL1), new Country(name2, flagURL2), score1, score2, horario, estadio);
 
                                 partidosAdapter.addPartido(p);
 
