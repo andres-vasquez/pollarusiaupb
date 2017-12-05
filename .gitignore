@@ -20,3 +20,5 @@ google-services.json
 **/.firebaserc
 */npm-debug.log
 *~
+
+**/package-lock.json
