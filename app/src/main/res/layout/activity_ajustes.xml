@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout android:layout_width="368dp"
+    android:layout_height="495dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="com.pollarusia2018.pollaupb.AjustesActivity">
+
+    <CheckBox
+        android:id="@+id/notificacionesCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ajustesTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="73dp"
+        android:text="Notificaciones"
+        android:textSize="18sp" />
+
+    <CheckBox
+        android:id="@+id/sonidoCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/notificacionesCheckBox"
+        android:layout_alignStart="@+id/notificacionesCheckBox"
+        android:layout_below="@+id/notificacionesCheckBox"
+        android:layout_marginTop="57dp"
+        android:text="Sonido"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/ajustesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="61dp"
+        android:text="AJUSTES"
+        android:textSize="30sp" />
+</RelativeLayout>
+
