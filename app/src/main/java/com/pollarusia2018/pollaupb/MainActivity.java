@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -18,6 +19,8 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.pollarusia2018.pollaupb.adapters.CountriesAdapter;
 import com.pollarusia2018.pollaupb.models.Country;
 
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        loadData();
 
-        loadDataRealtime();
+        //loadDataRealtime();
     }
 
     private void loadDataRealtime() {
@@ -100,6 +103,9 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
         if (firebaseUser == null) {
             goLogInScreen();
+        } else {
+            Log.d("TOKEN", FirebaseInstanceId.getInstance().getToken());
+            FirebaseMessaging.getInstance().subscribeToTopic("android-cert");
         }
     }
 

@@ -13,7 +13,6 @@
 
 gradle.properties
 
-google-services.json
 
 
 **/node_modules/*

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "636327860638",
+    "firebase_url": "https://rusia2018-59c49.firebaseio.com",
+    "project_id": "rusia2018-59c49",
+    "storage_bucket": "rusia2018-59c49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636327860638:android:a7e7f151826c9f9d",
+        "android_client_info": {
+          "package_name": "com.pollarusia2018.pollaupb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636327860638-bg9p7isd8blkmhf2aebmfjrsl0pevmmn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pollarusia2018.pollaupb",
+            "certificate_hash": "9bf6edbda3817eb1aef3509f54b8f2ed9cb5a16e"
+          }
+        },
+        {
+          "client_id": "636327860638-5kinjg8u4uqin6kkkrrs3roc7p35lltr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD8odOLZ61ihUNoki6-3gKXGBNpy8d0Uw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636327860638-5kinjg8u4uqin6kkkrrs3roc7p35lltr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
