@@ -5,10 +5,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.pollarusia2018.pollaupb.R;
 import com.pollarusia2018.pollaupb.models.Contacto;
+import com.pollarusia2018.pollaupb.models.OnContactClickListener;
 
 import java.util.ArrayList;
 
@@ -19,6 +21,8 @@ import java.util.ArrayList;
 public class InvitarAdapter extends RecyclerView.Adapter<InvitarAdapter.ViewHolder> {
     private ArrayList<Contacto> datos;
     private Context context;
+
+    private OnContactClickListener onContactClickListener;
 
     public InvitarAdapter(Context context) {
         datos = new ArrayList<Contacto>();
@@ -33,9 +37,17 @@ public class InvitarAdapter extends RecyclerView.Adapter<InvitarAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Contacto c = datos.get(position);
+        final Contacto c = datos.get(position);
         holder.nombreTextView.setText(c.getNombre());
         holder.numeroTextView.setText(c.getNumero());
+        holder.contactoLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(onContactClickListener!=null){
+                    onContactClickListener.onContactClick(c);
+                }
+            }
+        });
     }
 
     @Override
@@ -58,14 +70,20 @@ public class InvitarAdapter extends RecyclerView.Adapter<InvitarAdapter.ViewHold
         notifyDataSetChanged();
     }
 
+    public void setOnContactClickListener(OnContactClickListener onContactClickListener) {
+        this.onContactClickListener = onContactClickListener;
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
+        LinearLayout contactoLinearLayout;
         TextView nombreTextView;
         TextView numeroTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
+            contactoLinearLayout = itemView.findViewById(R.id.contactoLinearLayout);
             nombreTextView = itemView.findViewById(R.id.nombreTextView);
             numeroTextView = itemView.findViewById(R.id.numeroTextView);
         }

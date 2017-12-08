@@ -32,7 +32,8 @@ public class SplashActivity extends AppCompatActivity implements EasyPermissions
         String[] perms = {
                 android.Manifest.permission.READ_CONTACTS,
                 Manifest.permission.CAMERA,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.SEND_SMS
         };
 
         if (EasyPermissions.hasPermissions(this, perms)) {
